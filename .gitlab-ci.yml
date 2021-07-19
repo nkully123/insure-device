@@ -1,0 +1,13 @@
+deploy_dev:
+  tags:
+    - develop
+  stage: deploy
+  script: 
+    - echo $CI_REGISTRY
+    - docker build -t registry.thedigitalacademy.co.za/finknowledge/backend:latest --no-cache ./backend
+    - docker build -t registry.thedigitalacademy.co.za/finknowledge/frontend:latest --no-cache ./frontend 
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push registry.thedigitalacademy.co.za/finknowledge/backend:latest
+    - docker push registry.thedigitalacademy.co.za/finknowledge/frontend:latest
+  only:
+    - develop

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {}
+
+// Screen Sizes
+$tablet: 750px;
+$desktop: 768px;
+
+// Screen mixins
+@mixin tablet {
+	@media (min-width: #{$tablet}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop}) {
+		@content;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	transition: 1s;
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	border: 2px solid red;
+	height: 100vh;
+}
