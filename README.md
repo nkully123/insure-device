@@ -1,6 +1,6 @@
-# FIN Knowledge
+# Insure Social
 
-## **A. Prerequisites**
+### **A. Prerequisites**
 
 1. NodeJS from the [Official website](https://nodejs.org/en/)
 2. MongoDB from the [Official website](https://docs.mongodb.com/manual/installation/)
@@ -11,13 +11,13 @@
    > **npm -v** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `To check if npm is available`
 5. If you see an error or anything else other than the versions please repeat step one.
 #
-## **B. Install Angular CLI and NestJS CLI Globally *(Skip this step if you already have them installed)***
+### **B. Install Angular CLI and NestJS CLI Globally *(Skip this step if you already have them installed)***
 1. NestJS CLI
    > `npm i -g @nestjs/cli@7.6.0`
 2. Angular CLI
 	> `npm i -g @angular/cli@11.2.1`
 #
-## **C. Running the project**
+### **C. Running the project**
 1. ***`Running the backend`***
    - On the terminal, navigate to the backend directory
    - Run:
