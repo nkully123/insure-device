@@ -69,12 +69,14 @@ body{
 			margin-top: 3.5em;
 			height: 90%;
 
+			// When on wide screen
 			@include tablet{
 				.register__content{
 					margin-top: -3em !important;
 				}
 			}
 
+			// Authentication Styling
 			.login__wrapper, .register__wrapper, .error__wrapper{
 				justify-content: center;
 				flex-direction: column;
@@ -105,6 +107,7 @@ body{
 			.register__content .md-form{
 				margin: .5em 0 !important;
 			}
+			// End of Authentication Styling
 		}
 	}
 }
