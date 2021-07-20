@@ -1,0 +1,25 @@
+<div class="login__wrapper">
+	<div class="login__content" [formGroup]="loginForm">
+		<p class="h4 mb-4">Sign In</p>
+
+		<div class="md-form form-sm">
+			<input type="email" class="form-control form-control-sm" placeholder="Email Address..." mdbInput>
+			<label>Email</label>
+		</div>
+
+		<div class="md-form form-sm">
+			<input type="password" class="form-control form-control-sm" placeholder="Password..." mdbInput>
+			<label>Password</label>
+		</div>
+
+		<div class="form-check">
+			<mdb-checkbox formControlName="insurerRepresentetive" (change)="changeInsurerRepresentetive($event)">I represent an Insurance Company</mdb-checkbox>
+		</div>
+
+		<div><small><a routerLink="">Forgot password?</a></small></div>
+
+		<button mdbBtn color="info" block="true" class="my-3" size="sm" type="submit" (click)="login()">Sign in</button>
+
+		<small>Not a member? <a routerLink="/register">Register</a></small>
+	</div>
+</div>

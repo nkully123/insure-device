@@ -1,0 +1,107 @@
+<div class="register__wrapper">
+	<div class="register__content" [formGroup]="registerForm">
+		<p class="h4 my-3">Sign up</p>
+
+		<div class="form-row">
+			<div class="col-md-6">
+				<div class="md-form form-sm">
+					<input type="text" class="form-control form-control-sm" formControlName="full_name" placeholder="Full Name..." mdbInput>
+					<label>Full Name</label>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="md-form form-sm">
+					<input type="email" class="form-control form-control-sm" formControlName="email" placeholder="Email Address..." mdbInput>
+					<label>Email</label>
+				</div>
+			</div>
+		</div>
+
+		<div id="a__consumer" class="show w-100">
+			<div class="form-row">
+				<div class="col-md-6">
+					<div class="md-form form-sm">
+						<input type="text" class="form-control form-control-sm" formControlName="identity_number" placeholder="Identity Number..." mdbInput>
+						<label>Identity Number</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="md-form form-sm">
+						<div class="md-form form-sm">
+							<input type="text" class="form-control form-control-sm" formControlName="phone_number" placeholder="Phone Number..." mdbInput>
+							<label>Phone Number</label>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="form-row">
+				<div class="col-md-5">
+					<div class="md-form form-sm">
+						<input type="text" class="form-control form-control-sm" formControlName="address" placeholder="Address..." mdbInput>
+						<label>Address</label>
+					</div>
+				</div>
+	
+				<div class="col-md-5">
+					<div class="md-form form-sm">
+						<input type="text" class="form-control form-control-sm" formControlName="city" placeholder="City..." mdbInput>
+						<label>City</label>
+					</div>
+				</div>
+				
+				<div class="col-md-2">
+					<div class="md-form form-sm">
+						<input type="text" class="form-control form-control-sm" formControlName="zip_code" placeholder="Zip Code..." mdbInput>
+						<label>Zip Code</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="an__insurer" class="hide w-100">
+			<div class="form-row">
+				<div class="col-md-12">
+					<div class="md-form form-sm">
+						<input type="text" class="form-control form-control-sm" formControlName="company_name" placeholder="Company Name..." mdbInput>
+						<label>Company Name</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="form-row">
+			<div class="col-md-12">
+				<select class="browser-default custom-select custom-select-sm">
+					<option value="" selected>Choose Gender</option>
+					<option *ngFor="let gender of genders" [value]="gender.value">{{ gender.label }}</option>
+				</select>
+			</div>
+		</div> -->
+
+		<div class="form-row">
+			<div class="col-md-6">
+				<div class="md-form form-sm">
+					<input type="password" class="form-control form-control-sm" formControlName="password" placeholder="Password..." mdbInput>
+					<label>Password</label>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="md-form form-sm">
+					<div class="md-form form-sm">
+						<input type="password" class="form-control form-control-sm" formControlName="confirm_password" placeholder="Confirm Password..." mdbInput>
+						<label>Confirm Password</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-check">
+			<mdb-checkbox formControlName="insurerRepresentetive" (change)="changeInsurerRepresentetive($event)">I represent an Insurance Company</mdb-checkbox>
+		</div>
+
+		<button mdbBtn color="info" block="true" class="my-3" size="sm" type="submit" (click)="register()">Sign Up</button>
+
+		<small>Already a member? <a routerLink="/login">Sign In</a></small>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<mdb-navbar SideClass="navbar navbar-expand-md sticky-top" [containerInside]="true">
+	<mdb-navbar-brand>
+		<a class="navbar-brand pl-2 pr-2" routerLink="/">Logo</a>
+	</mdb-navbar-brand>
+	<links>
+		<div class="navbar-nav ml-auto nav-flex-icons">
+			<a class="nav-item nav-link waves-light active my-auto pl-2 pr-2" routerLink="/login" mdbWavesEffect><mdb-icon fas icon="sign-in-alt"></mdb-icon>&nbsp;&nbsp;Sign In</a>
+			<a class="nav-item nav-link waves-light active my-auto pl-2 pr-2" routerLink="/notifications" mdbWavesEffect>1 <mdb-icon fas icon="bell"></mdb-icon></a>
+			<div class="avatar dropdown" dropdown>
+				<a dropdownToggle mdbWavesEffect type="button" class="nav-item nav-link dropdown-toggle waves-light my-auto pl-2 pr-2" mdbWavesEffect>
+					<img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0" style="max-width: 35px;">
+				</a>
+				<div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+					<a class="dropdown-item waves-light" mdbWavesEffect routerLink="/profile"><mdb-icon fas icon="user-circle"></mdb-icon>&nbsp;&nbsp;Profile Settings</a>
+					<a class="dropdown-item waves-light" mdbWavesEffect routerLink="/"><mdb-icon fas icon="sign-out-alt"></mdb-icon>&nbsp;&nbsp;Sign Out</a>
+				</div>
+			</div>
+		</div>
+	</links>
+</mdb-navbar>
