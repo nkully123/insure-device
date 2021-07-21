@@ -16,7 +16,7 @@ import { OffersComponent } from './insurer/pages/offers/offers.component';
 // Everyone
 import { InsuredItemsComponent } from './everyone/pages/insured-items/insured-items.component';
 import { RegisterComponent } from './everyone/pages/register/register.component';
-import { ProfileComponent } from './consumer/pages/profile/profile.component';
+import { ProfileComponent } from "./everyone/pages/profile/profile.component";
 import { LoginComponent } from './everyone/pages/login/login.component';
 import { ErrorComponent } from './everyone/pages/error/error.component';
 

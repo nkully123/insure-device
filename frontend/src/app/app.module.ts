@@ -12,7 +12,7 @@ import { AppComponent } from "./app.component";
 // ==================================================== Pages go here ====================================================
 // Consumer Side
 import { NotificationsComponent } from "./consumer/pages/notifications/notifications.component";
-import { ProfileComponent } from "./consumer/pages/profile/profile.component";
+import { ProfileComponent } from "./everyone/pages/profile/profile.component";
 import { BillingComponent } from "./consumer/pages/billing/billing.component";
 import { InsureComponent } from "./consumer/pages/insure/insure.component";
 
