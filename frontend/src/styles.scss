@@ -76,8 +76,20 @@ body{
 				}
 			}
 
-			// Authentication Styling
-			.login__wrapper, .register__wrapper, .error__wrapper{
+			// All Wrappers
+			.login__wrapper, 
+			.register__wrapper, 
+			.error__wrapper, 
+			.billing__wrapper, 
+			.insure__wrapper,
+			.notifications__wrapper,
+			.profile__wrapper,
+			.insured__items__wrapper,
+			.reports__wrapper,
+			.offers__wrapper,
+			.dashboard__wrapper,
+			.clients__wrapper{
+				border: 1px solid red;
 				justify-content: center;
 				flex-direction: column;
 				align-items: center;
@@ -86,10 +98,10 @@ body{
 				display: flex;
 				height: 100%;
 			}
+			// End of all Wrappers
 
-
+			// Authentication Styling
 			.login__content, .register__content, .error__content{
-				border-radius: var(--primaryGap);
 				text-align: center;
 				max-width: 500px;
 				padding: 2em;
