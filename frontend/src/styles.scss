@@ -5,9 +5,11 @@
 	--primaryBorder: 1px solid rgb(230, 230, 230);
 	--primaryBG: #33b5e5 !important;
 	--primaryText: #fff !important;
+	--primaryRadius: 1em !important;
 	--primaryGap: 1em !important;
 
-	--secondaryText: #eee !important;
+	--secondaryText: rgb(102, 102, 102) !important;
+	--secondaryBG: rgb(255, 255, 255) !important;
 }
 
 // Screen Sizes
@@ -43,6 +45,12 @@ body{
 	footer.page-footer .footer-copyright{
 		background-color: var(--primaryBG) !important;
 		color: var(--primaryText);
+
+		.menu{
+			@include tablet{
+				display: none;
+			}	
+		}
 	}
 
 	.navbar a {
@@ -54,62 +62,100 @@ body{
 	}
 
 	.show{
-		display: inline-block;
+		display: block;
 	}
 
 	.main{
 		flex-direction: column;
+		overflow-y: scroll;
 		position: absolute;
-		overflow-y: hidden;
 		display: flex;
 		inset: 0;
 
 		.main__content{
-			overflow-y: hidden;
-			margin-top: 3.5em;
-			height: 90%;
-
-			// When on wide screen
-			@include tablet{
-				.register__content{
-					margin-top: -3em !important;
-				}
-			}
+			margin-bottom: .5em;
+			position: relative;
+			margin-top: 4em;
 
 			// All Wrappers
 			.login__wrapper, 
 			.register__wrapper, 
-			.error__wrapper, 
-			.billing__wrapper, 
-			.insure__wrapper,
-			.notifications__wrapper,
-			.profile__wrapper,
-			.insured__items__wrapper,
-			.reports__wrapper,
-			.offers__wrapper,
-			.dashboard__wrapper,
-			.clients__wrapper{
-				border: 1px solid red;
+			.error__wrapper{
 				justify-content: center;
 				flex-direction: column;
 				align-items: center;
-				padding-top: 2em;
-				overflow: scroll;
+				padding: 0 1em;
 				display: flex;
 				height: 100%;
 			}
 			// End of all Wrappers
 
+			// Side Navigation
+			.sidenav__wrapper{
+				box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.433);
+				background-color: var(--secondaryBG);
+				border-radius: var(--primaryRadius);
+				grid-area: sidnav__wrapper;
+				text-align: center;
+				max-height: 400px;
+				max-width: 300px;
+				position: fixed;
+				margin: auto;
+				inset: 10px;
+				z-index: 1;
+				padding: 0;
+
+				@include tablet{
+					text-align: start;
+					box-shadow: none;
+					margin: 5em 0 0;
+					display: block;
+					width: 200px;
+					inset: 0;
+				}
+
+				.sidenav__content{
+					border-radius: var(--primaryRadius);
+					flex-direction: column;
+					display: flex;
+					height: 100%;
+
+					.sidenav__close{
+						border-top-right-radius: var(--primaryRadius);
+						border-top-left-radius: var(--primaryRadius);
+						padding: .5em .8em 0;
+						text-align: right;
+
+						@include tablet{
+							display: none;
+						}
+					}
+
+					// close__sidenav
+
+					a{
+						color: var(--secondaryText);
+						padding: .5em 1.5em;
+
+						&:last-child{
+							border-bottom-right-radius: var(--primaryRadius);
+							border-bottom-left-radius: var(--primaryRadius);
+						}
+
+						&:hover{
+							background-color: var(--primaryBG);
+							color: var(--primaryText);
+						}
+					}
+				}
+			}
+			// End of Side Navigation
+
 			// Authentication Styling
 			.login__content, .register__content, .error__content{
 				text-align: center;
 				max-width: 500px;
-				padding: 2em;
 				width: 100%;
-			}
-
-			.register__content{
-				margin-top: 6em;
 			}
 
 			.login__content .md-form{
@@ -120,6 +166,153 @@ body{
 				margin: .5em 0 !important;
 			}
 			// End of Authentication Styling
+
+			// Wrappers With Grid
+			.insure__wrapper,
+			.offers__wrapper,
+			.reports__wrapper,
+			.profile__wrapper,
+			.billing__wrapper,
+			.clients__wrapper,
+			.dashboard__wrapper,
+			.notifications__wrapper,
+			.insured__items__wrapper{
+				@include tablet{
+					grid-template-columns: 200px 1fr;
+					margin-top: 1em;
+					display: grid;
+					gap: .5em;
+				}
+			}			
+			// End of Wrappers With Grid
+
+			// Contents In Wrappers
+			.insure__content,
+			.offers__content,
+			.reports__content,
+			.profile__content,
+			.billing__content,
+			.clients__content,
+			.dashboard__content,
+			.notifications__content,
+			.insured__items__content{
+				min-height: 400px;
+				padding: 0 .5em;
+				width: 100%;
+			}
+			// End of Contents In Wrappers
+
+			// Profile Styling
+			.profile__wrapper{
+				@include tablet{
+					grid-template-areas: ". profile__content";
+				}
+				
+				.profile__content{
+					grid-area: profile__content;
+				}
+			}
+			// End of Profile Styling
+
+			// =========================== Consumer ===========================
+			// Insure Styling
+			.insure__wrapper{
+				@include tablet{
+					grid-template-areas: ". insure__content";
+				}
+				
+				.insure__content{
+					grid-area: insure__content;
+				}
+			}
+			// End of Insure Styling
+
+			// Notifications Styling
+			.notifications__wrapper{
+				@include tablet{
+					grid-template-areas: ". notifications__content";
+				}
+				
+				.notifications__content{
+					grid-area: notifications__content;
+				}
+			}
+			// End of Notifications Styling
+
+			// Billing Styling
+			.billing__wrapper{
+				@include tablet{
+					grid-template-areas: ". billing__content";
+				}
+				
+				.billing__content{
+					grid-area: billing__content;
+				}
+			}
+			// End of Billing Styling
+
+			// Insured Items Styling
+			.insured__items__wrapper{
+				@include tablet{
+					grid-template-areas: ". insured__items__content";
+				}
+				
+				.insured__items__content{
+					grid-area: insured__items__content;
+				}
+			}
+			// End of Insured Items Styling
+			// =========================== End of Consumer ===========================
+
+			// =========================== Insurer ===========================
+			// Client Styling
+			.clients__wrapper{
+				@include tablet{
+					grid-template-areas: ". clients__content";
+				}
+				
+				.clients__content{
+					grid-area: clients__content;
+				}
+			}
+			// End of Client Styling
+
+			// Dahsboard Styling
+			.dashboard__wrapper{
+				@include tablet{
+					grid-template-areas: ". dashboard__content";
+				}
+				
+				.dashboard__content{
+					grid-area: dashboard__content;
+				}
+			}
+			// End of Dahsboard Styling
+
+			// Offers Styling
+			.offers__wrapper{
+				@include tablet{
+					grid-template-areas: ". offers__content";
+				}
+				
+				.offers__content{
+					grid-area: offers__content;
+				}
+			}
+			// End of Offers Styling
+
+			// Reports Styling
+			.reports__wrapper{
+				@include tablet{
+					grid-template-areas: ". reports__content";
+				}
+				
+				.reports__content{
+					grid-area: reports__content;
+				}
+			}
+			// End of Reports Styling
+			// =========================== End of Insurer ===========================
 		}
 	}
 }

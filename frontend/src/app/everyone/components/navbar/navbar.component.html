@@ -1,7 +1,7 @@
-<mdb-navbar SideClass="navbar navbar-expand-md navbar-dark sticky-top" [containerInside]="true">
+<mdb-navbar SideClass="navbar navbar-expand-md navbar-dark sticky-top" [containerInside]="false">
 	<mdb-navbar-brand>
 		<a class="navbar-brand pl-2 pr-2" routerLink="/">Logo</a>
-		<a class="navbar-brand">Menu</a>
+		<a class="navbar-brand menu" (click)="toggleSideNav()">Menu</a>
 	</mdb-navbar-brand>
 	<links>
 		<div class="navbar-nav ml-auto nav-flex-icons">
