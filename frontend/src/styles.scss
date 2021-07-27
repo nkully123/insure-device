@@ -109,7 +109,8 @@ body{
 				@include tablet{
 					text-align: start;
 					box-shadow: none;
-					margin: 5em 0 0;
+					// margin: 5em 0 0;
+					margin: auto 0;
 					display: block;
 					width: 200px;
 					inset: 0;
@@ -286,6 +287,49 @@ body{
 				
 				.dashboard__content{
 					grid-area: dashboard__content;
+
+					.card{
+						width: 20%;
+						background: #fff;
+						border:1px solid #ccc;
+						margin-bottom: 50px;
+						transition: 0.3s;
+						margin-left: 0.5%;
+						
+						}
+						
+						.row{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-around;
+						flex-flow: wrap;
+						
+						}
+						
+						.card-body{
+						padding: 30px 20px;
+						text-align: center;
+						font-size: 18px;
+						
+						}
+						.card-body .btn{
+						
+							display: block;
+							color: #fff;
+							text-align: center;
+							background: linear-gradient(to right,rgb(38, 132, 187),lightblue);
+							margin-top: 50px;
+							text-decoration: none;
+							padding: 10px;
+						
+						}
+						
+						.card:hover{
+						transition: scale(1.05);
+						box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+						
+						}
+
 				}
 			}
 			// End of Dahsboard Styling
@@ -311,9 +355,75 @@ body{
 				.reports__content{
 					grid-area: reports__content;
 				}
+				.reports__content ul{
+   
+					padding: 0px;
+					 margin: 0px;
+					 }
+					
+					 .reports__content ul li{
+					
+					 list-style: none;
+					 float: left;
+					 width: 20%;
+					 height: 150px;
+					 //background: white;
+					 background: linear-gradient(to right,rgb(191, 199, 204),lightblue);
+					 margin: 40px -30px 0px 200px;
+					 // margin: 40px 30px 0px 150px;
+					 border-radius: 25px;
+					 border: 2px solid lightblue;
+					 padding: 40px;
+						}
+				 
+					.reports__content ul li:hover{
+				 
+					  transition: scale(1.05);
+					  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+					 
+					  }
 			}
 			// End of Reports Styling
 			// =========================== End of Insurer ===========================
 		}
 	}
+
+//Global styles
+
+.box{
+    width: 281px;
+    height: 170px;
+    background: white;
+    margin-right: 1rem;
+    border-radius: 25px;
+    border: 2px solid lightblue;
+    padding: 30px;
+        
+}
+
+.box:hover{
+ 
+    transition: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+   
+    }
+
+      .d-flex button:hover{
+ 
+    transition: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+   
+    }
+
+    .d-flex button{
+
+      height: 30%;
+      margin-top: 9%;
+      border-radius: 25px;
+	  background: linear-gradient(to right,rgb(38, 132, 187),lightblue);
+border: 2px solid lightblue;
+width: 150px;
+
+    }
+
 }
