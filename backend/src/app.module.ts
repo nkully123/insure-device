@@ -12,7 +12,7 @@ import { ProductModule } from "./consumer/product/product.module";
 
 @Module({
 	imports: [
-		MongooseModule.forRoot("mongodb://localhost:27017/<database_name>", {
+		MongooseModule.forRoot("mongodb+srv://admin:admin@cluster0.ilbdz.mongodb.net/insuranceDB?retryWrites=true&w=majority", {
 			autoCreate: true,
 		}),
 		InsurerProfileModule,
@@ -20,7 +20,6 @@ import { ProductModule } from "./consumer/product/product.module";
 		ReportModule,
 		ClientProfileModule,
 		ProductModule,
-		// MongooseModule.forRoot("mongodb+srv://<username>:<password>@ecommerce-nestjs-angula.qp0gp.mongodb.net/ecommerce?retryWrites=true&w=majority"),
 	],
 	controllers: [AppController],
 	providers: [AppService],
