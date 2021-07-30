@@ -18,14 +18,13 @@ export class OfferController {
          
       ) {
 
-      const genID = await this.insurerOffer.insertOffer
-      (
+        const genID = await this.insurerOffer.insertOffer
+        (
         offerPrice,
         offerDescription,
         offerClientID,
         offerInsuranceID,
         );
-
       return "company ID : " + genID;
     }
     
@@ -35,6 +34,32 @@ export class OfferController {
          return this.insurerOffer.deleteInsurerOffer(insuranceId);
 
     }
+
+    @Patch(':id')
+    async updateUser(
+     @Param('id') insuranceID:string,
+     @Body('price') offerPrice:string,
+     @Body('description') offerDescription:string, 
+     @Body('clientID') offerClientID:string, 
+     @Body('insuranceID') offerInsuranceID:string,
+  
+     ){
+      await  this.insurerOffer.updateInsureOffer  
+      (
+        
+       insuranceID,
+       offerPrice,
+       offerDescription,
+       offerClientID,
+       offerInsuranceID,
+       
+       
+      )
+        console.log(insuranceID);
+
+        return "Insurance Company ID " + insuranceID + " was updated"
+       
+      }
 
 }
 

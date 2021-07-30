@@ -108,10 +108,7 @@ export class InsurerProfileService
                     throw new NotFoundException('could not find insurance of ID ' + id );
                 }
     
-          
                 return insuranceCompany;
-    
-               
     
             }
   

@@ -20,6 +20,7 @@ export class OfferService {
         clientID: string,
         insuranceID: string,
         
+        
 
         ){
         const newInsuranceOffer = new this.offerModel
@@ -46,6 +47,61 @@ export class OfferService {
       }
       return "Offer Id " + insurerID + " was deleted";
         
+    }
+
+    async updateInsureOffer
+    (
+        id: string,
+        price: string,
+        description: string,
+        clientID: string,
+        insuranceID: string,
+      
+    )
+    {
+      const updatedInsuranceOffer = await this.findOffer(id);
+      if(price)
+      {
+        updatedInsuranceOffer.price = price;
+      }
+      if(description)
+      {
+        updatedInsuranceOffer.description = description;
+      }
+       if(clientID)
+       {
+        updatedInsuranceOffer.clientID = clientID;
+       }
+       if(insuranceID)
+       {
+        updatedInsuranceOffer.insuranceID = insuranceID;
+       }
+       console.log(updatedInsuranceOffer);
+       updatedInsuranceOffer.save();
+      
+    }
+    private async findOffer(id: string): Promise<Offer>
+    {
+         console.log(id);
+         let offerCompany;
+
+       try
+       {
+          offerCompany = await this.offerModel.findById(id).exec();
+
+          console.log(offerCompany);
+       }
+      catch(error)
+     {
+        throw new NotFoundException('could not find offer of ID ' + id );
+     }
+
+     if(!offerCompany)
+     {
+        throw new NotFoundException('could not find offer of ID ' + id );
+     }
+
+     return offerCompany;
     }
 }
 
